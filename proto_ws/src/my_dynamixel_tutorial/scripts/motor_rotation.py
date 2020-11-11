@@ -45,7 +45,7 @@ class MotorRotation:
         Rotate the robot to the door number asked by the user
         """
         msg = Float64()
-        rate = rospy.Rate(10) # 10hz
+        rate = rospy.Rate(10)
 
         while not rospy.is_shutdown():
             
@@ -54,15 +54,17 @@ class MotorRotation:
 
             if self.door_number == 1:
                 msg.data = self.DOOR_1_POSITION
-                if self.current_goal_position == 254:
-                    rospy.logwarn("Already on door 1")
+                #if self.current_goal_position == 254:
+                    #send warning to the app
+                    #rospy.logwarn("Already on door 1")
 
             elif self.door_number == 2:
                 msg.data = self.DOOR_2_POSITION
-                if self.current_goal_position == 782:
-                    rospy.logwarn("Already on door 2")
+                #if self.current_goal_position == 782:
+                    #send warning to the app
+                    #rospy.logwarn("Already on door 2")
 
-            rospy.loginfo("Door number: {}\tPosition: {}".format(self.door_number, msg.data))
+            #rospy.loginfo("Door number: {}\tPosition: {}".format(self.door_number, msg.data))
             self.pub.publish(msg)
             rate.sleep()
     

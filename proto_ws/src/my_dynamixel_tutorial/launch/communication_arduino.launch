@@ -1,0 +1,8 @@
+<launch>
+    <arg name="port" default="/dev/ttyACM1" />
+
+    <node pkg="my_dynamixel_tutorial" name = "motor_rotation" type="motor_rotation.py" output="screen"/>
+    <node pkg="rosserial_python" name = "door_number" type="serial_node.py" output="screen">
+        <param name="port" value="$(arg port)" />
+    </node>
+</launch>
