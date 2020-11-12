@@ -1,0 +1,2 @@
+dynamixel_motor-master/dynamixel_controllers:dynamixel_motor-master/dynamixel_driver:dynamixel_motor-master/dynamixel_motor:dynamixel_motor-master/dynamixel_msgs:dynamixel_motor-master/dynamixel_tutorials:my_dynamixel_tutorial
+-DCATKIN_DEVEL_PREFIX=/home/student/door-watcher/door_watcher_ws/devel -DCMAKE_INSTALL_PREFIX=/home/student/door-watcher/door_watcher_ws/install -G Unix Makefiles
