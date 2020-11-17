@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/dynamixel_msgs_generate_messages_cpp"
-  "/home/student/door-watcher/door_watcher_ws/devel/include/dynamixel_msgs/JointState.h"
-  "/home/student/door-watcher/door_watcher_ws/devel/include/dynamixel_msgs/MotorState.h"
-  "/home/student/door-watcher/door_watcher_ws/devel/include/dynamixel_msgs/MotorStateList.h"
+  "/home/student/Bureau/door-watcher/door_watcher_ws/devel/include/dynamixel_msgs/JointState.h"
+  "/home/student/Bureau/door-watcher/door_watcher_ws/devel/include/dynamixel_msgs/MotorState.h"
+  "/home/student/Bureau/door-watcher/door_watcher_ws/devel/include/dynamixel_msgs/MotorStateList.h"
 )
 
 # Per-language clean rules from dependency scanning.

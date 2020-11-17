@@ -7,9 +7,9 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/student/door-watcher/door_watcher_ws/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/student/door-watcher/door_watcher_ws/devel/lib:$LD_LIBRARY_PATH"
-export PWD='/home/student/door-watcher/door_watcher_ws/build'
-export PYTHONPATH="/home/student/door-watcher/door_watcher_ws/devel/lib/python2.7/dist-packages:$PYTHONPATH"
-export ROSLISP_PACKAGE_DIRECTORIES='/home/student/door-watcher/door_watcher_ws/devel/share/common-lisp'
-export ROS_PACKAGE_PATH="/home/student/door-watcher/door_watcher_ws/src:$ROS_PACKAGE_PATH"
+export CMAKE_PREFIX_PATH="/home/student/Bureau/door-watcher/door_watcher_ws/devel:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/student/Bureau/door-watcher/door_watcher_ws/devel/lib:$LD_LIBRARY_PATH"
+export PWD='/home/student/Bureau/door-watcher/door_watcher_ws/build'
+export PYTHONPATH="/home/student/Bureau/door-watcher/door_watcher_ws/devel/lib/python2.7/dist-packages:$PYTHONPATH"
+export ROSLISP_PACKAGE_DIRECTORIES='/home/student/Bureau/door-watcher/door_watcher_ws/devel/share/common-lisp'
+export ROS_PACKAGE_PATH="/home/student/Bureau/door-watcher/door_watcher_ws/src:$ROS_PACKAGE_PATH"

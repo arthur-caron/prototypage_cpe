@@ -9,8 +9,9 @@ class MotorControl:
     Rotate the motor depending the door number chose by the user
     Each door has a specific position. In this script, we assume there are 2 doors. But we could add more easily.
     """
-    DOOR_1_POSITION = 1.3
-    DOOR_2_POSITION = 4.0
+    DOOR_1_POSITION = 3.2 # 626
+    DOOR_2_POSITION = 1.85 # 362
+    DOOR_3_POSITION = 0.0 # 0
 
     def __init__(self):
         self.door_number = 1 # Default door number 
@@ -24,6 +25,10 @@ class MotorControl:
         rospy.Subscriber('/motor_states/pan_tilt_port', MotorStateList, self.motor_states_callback)
         self.pub_is_moving = rospy.Publisher('/is_moving', Bool, queue_size=1) 
 
+        msg = Float64()
+        msg.data = self.DOOR_1_POSITION
+        self.pub_rotation.publish(msg)
+        
         rospy.loginfo("[motor_control] node started...")
 
     def door_number_callback(self, data):
@@ -39,8 +44,11 @@ class MotorControl:
 
         elif self.door_number == 2:
             msg.data = self.DOOR_2_POSITION
+        
+        elif self.door_number == 3:
+            msg.data = self.DOOR_3_POSITION
 
-        #rospy.loginfo("Door number: {}\tPosition: {}".format(self.door_number, msg.data))
+        rospy.loginfo("Door number: {}".format(self.door_number))
         self.pub_rotation.publish(msg)
 
     def motor_states_callback(self, data):

@@ -67,14 +67,14 @@ set(dynamixel_driver_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(dynamixel_driver_SOURCE_PREFIX /home/student/door-watcher/door_watcher_ws/src/dynamixel_motor-master/dynamixel_driver)
-  set(dynamixel_driver_DEVEL_PREFIX /home/student/door-watcher/door_watcher_ws/devel)
+  set(dynamixel_driver_SOURCE_PREFIX /home/student/Bureau/door-watcher/door_watcher_ws/src/dynamixel_motor-master/dynamixel_driver)
+  set(dynamixel_driver_DEVEL_PREFIX /home/student/Bureau/door-watcher/door_watcher_ws/devel)
   set(dynamixel_driver_INSTALL_PREFIX "")
   set(dynamixel_driver_PREFIX ${dynamixel_driver_DEVEL_PREFIX})
 else()
   set(dynamixel_driver_SOURCE_PREFIX "")
   set(dynamixel_driver_DEVEL_PREFIX "")
-  set(dynamixel_driver_INSTALL_PREFIX /home/student/door-watcher/door_watcher_ws/install)
+  set(dynamixel_driver_INSTALL_PREFIX /home/student/Bureau/door-watcher/door_watcher_ws/install)
   set(dynamixel_driver_PREFIX ${dynamixel_driver_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/student/door-watcher/door_watcher_ws/install/lib;/opt/ros/melodic/lib)
+    foreach(path /home/student/Bureau/door-watcher/door_watcher_ws/install/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/student/door-watcher/door_watcher_ws/src
+CMAKE_SOURCE_DIR = /home/student/Bureau/door-watcher/door_watcher_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/student/door-watcher/door_watcher_ws/build
+CMAKE_BINARY_DIR = /home/student/Bureau/door-watcher/door_watcher_ws/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,14 +137,14 @@ install/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/student/door-watcher/door_watcher_ws/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/student/door-watcher/door_watcher_ws/build/CMakeFiles /home/student/door-watcher/door_watcher_ws/build/dynamixel_motor-master/dynamixel_motor/CMakeFiles/progress.marks
-	cd /home/student/door-watcher/door_watcher_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dynamixel_motor-master/dynamixel_motor/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/student/door-watcher/door_watcher_ws/build/CMakeFiles 0
+	cd /home/student/Bureau/door-watcher/door_watcher_ws/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/student/Bureau/door-watcher/door_watcher_ws/build/CMakeFiles /home/student/Bureau/door-watcher/door_watcher_ws/build/dynamixel_motor-master/dynamixel_motor/CMakeFiles/progress.marks
+	cd /home/student/Bureau/door-watcher/door_watcher_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dynamixel_motor-master/dynamixel_motor/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/student/Bureau/door-watcher/door_watcher_ws/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/student/door-watcher/door_watcher_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dynamixel_motor-master/dynamixel_motor/clean
+	cd /home/student/Bureau/door-watcher/door_watcher_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dynamixel_motor-master/dynamixel_motor/clean
 .PHONY : clean
 
 # The main clean target
@@ -154,17 +154,17 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/student/door-watcher/door_watcher_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dynamixel_motor-master/dynamixel_motor/preinstall
+	cd /home/student/Bureau/door-watcher/door_watcher_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dynamixel_motor-master/dynamixel_motor/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/student/door-watcher/door_watcher_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dynamixel_motor-master/dynamixel_motor/preinstall
+	cd /home/student/Bureau/door-watcher/door_watcher_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dynamixel_motor-master/dynamixel_motor/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/student/door-watcher/door_watcher_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/student/Bureau/door-watcher/door_watcher_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Help Target
@@ -191,6 +191,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/student/door-watcher/door_watcher_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/student/Bureau/door-watcher/door_watcher_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

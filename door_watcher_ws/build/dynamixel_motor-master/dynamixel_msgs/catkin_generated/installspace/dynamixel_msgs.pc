@@ -1,4 +1,4 @@
-prefix=/home/student/door-watcher/door_watcher_ws/install
+prefix=/home/student/Bureau/door-watcher/door_watcher_ws/install
 
 Name: dynamixel_msgs
 Description: Description of dynamixel_msgs

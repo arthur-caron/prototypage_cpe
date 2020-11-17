@@ -67,14 +67,14 @@ set(my_dynamixel_tutorial_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(my_dynamixel_tutorial_SOURCE_PREFIX /home/student/door-watcher/door_watcher_ws/src/my_dynamixel_tutorial)
-  set(my_dynamixel_tutorial_DEVEL_PREFIX /home/student/door-watcher/door_watcher_ws/devel)
+  set(my_dynamixel_tutorial_SOURCE_PREFIX /home/student/Bureau/door-watcher/door_watcher_ws/src/my_dynamixel_tutorial)
+  set(my_dynamixel_tutorial_DEVEL_PREFIX /home/student/Bureau/door-watcher/door_watcher_ws/devel)
   set(my_dynamixel_tutorial_INSTALL_PREFIX "")
   set(my_dynamixel_tutorial_PREFIX ${my_dynamixel_tutorial_DEVEL_PREFIX})
 else()
   set(my_dynamixel_tutorial_SOURCE_PREFIX "")
   set(my_dynamixel_tutorial_DEVEL_PREFIX "")
-  set(my_dynamixel_tutorial_INSTALL_PREFIX /home/student/door-watcher/door_watcher_ws/install)
+  set(my_dynamixel_tutorial_INSTALL_PREFIX /home/student/Bureau/door-watcher/door_watcher_ws/install)
   set(my_dynamixel_tutorial_PREFIX ${my_dynamixel_tutorial_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/student/door-watcher/door_watcher_ws/install/lib;/opt/ros/melodic/lib)
+    foreach(path /home/student/Bureau/door-watcher/door_watcher_ws/install/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

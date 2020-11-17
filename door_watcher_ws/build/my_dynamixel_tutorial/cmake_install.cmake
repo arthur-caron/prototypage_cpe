@@ -1,8 +1,8 @@
-# Install script for directory: /home/student/door-watcher/door_watcher_ws/src/my_dynamixel_tutorial
+# Install script for directory: /home/student/Bureau/door-watcher/door_watcher_ws/src/my_dynamixel_tutorial
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/student/door-watcher/door_watcher_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/student/Bureau/door-watcher/door_watcher_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/student/door-watcher/door_watcher_ws/build/my_dynamixel_tutorial/catkin_generated/installspace/my_dynamixel_tutorial.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/student/Bureau/door-watcher/door_watcher_ws/build/my_dynamixel_tutorial/catkin_generated/installspace/my_dynamixel_tutorial.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/my_dynamixel_tutorial/cmake" TYPE FILE FILES
-    "/home/student/door-watcher/door_watcher_ws/build/my_dynamixel_tutorial/catkin_generated/installspace/my_dynamixel_tutorialConfig.cmake"
-    "/home/student/door-watcher/door_watcher_ws/build/my_dynamixel_tutorial/catkin_generated/installspace/my_dynamixel_tutorialConfig-version.cmake"
+    "/home/student/Bureau/door-watcher/door_watcher_ws/build/my_dynamixel_tutorial/catkin_generated/installspace/my_dynamixel_tutorialConfig.cmake"
+    "/home/student/Bureau/door-watcher/door_watcher_ws/build/my_dynamixel_tutorial/catkin_generated/installspace/my_dynamixel_tutorialConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/my_dynamixel_tutorial" TYPE FILE FILES "/home/student/door-watcher/door_watcher_ws/src/my_dynamixel_tutorial/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/my_dynamixel_tutorial" TYPE FILE FILES "/home/student/Bureau/door-watcher/door_watcher_ws/src/my_dynamixel_tutorial/package.xml")
 endif()
 

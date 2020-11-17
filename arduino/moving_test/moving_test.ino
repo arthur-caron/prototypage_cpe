@@ -4,21 +4,23 @@
 #include <ros.h>
 #include <std_msgs/Bool.h>
 
-const int ledPin = 2;
+const int ledPin = 12;
 
 ros::NodeHandle  nh;
 
-void messageCb( const std_msgs::Bool& msg){
-  Serial.println("Here");
-  if (msg.data == false) {
+void messageCallback(const std_msgs::Bool& msg)
+{
+  if (msg.data == false) 
+  {
     digitalWrite(ledPin, HIGH);   // TODO: Remplacer par verifydistance()
   }
-  else {
+  else 
+  {
     digitalWrite(ledPin, LOW)  ;
   }
 }
 
-ros::Subscriber<std_msgs::Bool> sub("/is_moving", &messageCb );
+ros::Subscriber<std_msgs::Bool> sub("/is_moving", &messageCallback);
 
 void setup()
 {
@@ -26,7 +28,6 @@ void setup()
   nh.initNode();
   nh.subscribe(sub);
 
-  
 }
 
 void loop()

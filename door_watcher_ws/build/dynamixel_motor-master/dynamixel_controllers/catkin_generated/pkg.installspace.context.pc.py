@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "${prefix}/include".split(';') if "${prefix}/i
 PROJECT_CATKIN_DEPENDS = "rospy;actionlib;dynamixel_driver;std_msgs;trajectory_msgs;diagnostic_msgs;dynamixel_msgs;control_msgs".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "dynamixel_controllers"
-PROJECT_SPACE_DIR = "/home/student/door-watcher/door_watcher_ws/install"
+PROJECT_SPACE_DIR = "/home/student/Bureau/door-watcher/door_watcher_ws/install"
 PROJECT_VERSION = "0.4.1"

@@ -1,4 +1,4 @@
-prefix=/home/student/door-watcher/door_watcher_ws/devel
+prefix=/home/student/Bureau/door-watcher/door_watcher_ws/devel
 
 Name: dynamixel_driver
 Description: Description of dynamixel_driver

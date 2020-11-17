@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
 PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "my_dynamixel_tutorial"
-PROJECT_SPACE_DIR = "/home/student/door-watcher/door_watcher_ws/install"
+PROJECT_SPACE_DIR = "/home/student/Bureau/door-watcher/door_watcher_ws/install"
 PROJECT_VERSION = "0.0.0"
