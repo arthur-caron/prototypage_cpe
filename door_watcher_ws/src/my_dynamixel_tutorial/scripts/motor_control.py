@@ -16,6 +16,7 @@ class MotorControl:
     def __init__(self):
         self.door_number = 1 # Default door number 
         self.is_moving = False # Does the motor move?
+        self.cpt = 0
         
         rospy.init_node('motor_control', anonymous=True)
         
@@ -55,12 +56,15 @@ class MotorControl:
         """
         Publish to /is_moving if the motor is moving or not
         """
-        for element in data.motor_states:
-            self.moving = int(element.moving)
+        if (self.cpt == 2):
+            self.cpt = 0
+            for element in data.motor_states:
+                self.moving = int(element.moving)
 
-        msg = Bool()
-        msg.data = self.moving 
-        self.pub_is_moving.publish(msg)
+            msg = Bool()
+            msg.data = self.moving 
+            self.pub_is_moving.publish(msg)
+        self.cpt += 1
 
 
 if __name__ == '__main__':

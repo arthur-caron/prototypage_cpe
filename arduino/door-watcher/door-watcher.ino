@@ -28,14 +28,15 @@
 String doorNumberStr = "1";
 int doorNumber = 1; 
 
-int distances[3] = {39, 29, 40}; // Distances to doors
+int distances[3] = {38, 28, 38}; // Distances to doors
 
-ros::NodeHandle nh;
 
 Adafruit_VL53L0X measureDistance = Adafruit_VL53L0X(); // Using TOF sensor to detect motion
 
 unsigned long previousMillis = 0;
 const long interval = 1000;
+unsigned long previousMillis_alert = 0;
+const long interval_alert = 2000;
 int buzzerState = 0;
 
 // BLE variables
@@ -45,6 +46,9 @@ bool deviceConnected = false;
 bool oldDeviceConnected = false;
 int txValue = 0;
 int a = 0;
+
+/***********************/
+bool ble_recieving = false;
 
 #define SERVICE_UUID        "4fafc201-1fb5-459e-8fcc-c5c9c331914b"
 #define CHARACTERISTIC_UUID "beb5483e-36e1-4688-b7f5-ea07361b26a8"
@@ -62,6 +66,8 @@ void callApp();
 /*****************************************/
 /*      Node declaration                 */
 /*****************************************/
+ros::NodeHandle nh;
+
 /**
  * Run the motion detection only if the motor is not moving
  */
@@ -101,7 +107,10 @@ class MyServerCallbacks: public BLEServerCallbacks {
  */
 class MyCallbacks: public BLECharacteristicCallbacks {
     void onWrite(BLECharacteristic *pCharacteristic) {
+
       std::string value = pCharacteristic->getValue();
+      
+      ble_recieving = true;
       
       if (value.length() > 0) {
         doorNumberStr = "";
@@ -109,8 +118,11 @@ class MyCallbacks: public BLECharacteristicCallbacks {
         for (int i=0; i<value.length(); i++) {
           doorNumberStr = doorNumberStr + value[i];
         }
+
         publishDoorNumber();
       }
+      delay(500);
+      ble_recieving = false;
     }
 };
 
@@ -157,6 +169,7 @@ void setup()
   pinMode(BUZZER_PIN, OUTPUT);
   pinMode(LED_PIN, OUTPUT);
 
+
   // Create node 
   nh.initNode();
   nh.subscribe(sub);
@@ -190,15 +203,17 @@ void loop() {
  * Convert the door string to an integer 
  */
 int charToInt() {
-  if (doorNumberStr == "1") {
+  // Door 1 appli = doorNumberStr 2
+  // 0 and 1 alert signals 
+  if (doorNumberStr == "2") {
     doorNumber = 1;
     return 1;
   }
-  if (doorNumberStr == "2") {
+  if (doorNumberStr == "3") {
     doorNumber = 2;
     return 2;
   }
-  if (doorNumberStr == "3") {
+  if (doorNumberStr == "4") {
     doorNumber = 3;
     return 3;
   }
@@ -217,15 +232,19 @@ void verifyDistance(int distanceToDoor){
 
     msg_dist.data = distanceCm;
     pub.publish(&msg_dist);
-    
-    // If the distance is not between distance_min and ditance_max, send an alert to the app
-    if(distanceCm < (distanceToDoor - 1) || distanceCm > (distanceToDoor + 1)) {
-      playSound();
-      digitalWrite(LED_PIN, HIGH);
-    }
-    else {
-      digitalWrite(LED_PIN, LOW);
-      digitalWrite(BUZZER_PIN, LOW);
+
+    if(ble_recieving == false)
+    {
+      // If the distance is not between distance_min and ditance_max, send an alert to the app
+      if(distanceCm < (distanceToDoor - 1) || distanceCm > (distanceToDoor + 1)) {
+        playSound();
+        callApp();
+        digitalWrite(LED_PIN, HIGH);
+      }
+      else {
+        digitalWrite(BUZZER_PIN, LOW);
+        digitalWrite(LED_PIN, LOW);  
+      }
     }
   }
 }
@@ -256,4 +275,27 @@ void playSound() {
     
     digitalWrite(BUZZER_PIN, buzzerState);
   }
+}
+
+/**
+ * Send alert to the app when a door is opened
+ * TODO: If we call this function, we need to change in charToInt() the doors number +1
+ */
+void callApp() {
+  unsigned long currentMillis_alert = millis();
+
+  if (currentMillis_alert - previousMillis_alert >= interval_alert) {
+    previousMillis_alert = currentMillis_alert;
+
+    if (txValue = 48) {
+      txValue = 49;
+    }
+
+    else if (txValue = 49) {
+      txValue = 48;
+    }
+    pCharacteristic->setValue(txValue);
+    pCharacteristic->notify();
+  }
+
 }
