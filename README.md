@@ -30,5 +30,5 @@ Sébastien Altounian
 1. Vérifiez la communication avec le moteur : `rosrun dynamixel_driver info_dump.py -p /dev/ttyACM0 2`
 2. Executer : `roslaunch my_dynamixel_tutorial controller_manager.launch`
 3. Executer dans un autre terminal : `roslaunch my_dynamixel_tutorial controller_spawner.launch`
-4. Excetuer : `roslaunch my_dynamixel_tutorial communication_arduino.launch`
+4. Executer : `roslaunch my_dynamixel_tutorial communication_arduino.launch`
 
