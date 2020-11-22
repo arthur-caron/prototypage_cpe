@@ -1,8 +1,0 @@
-prefix=/home/student/Bureau/door-watcher/door_watcher_ws/devel
-
-Name: my_dynamixel_tutorial
-Description: Description of my_dynamixel_tutorial
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
