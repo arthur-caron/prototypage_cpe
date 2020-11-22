@@ -1,8 +1,12 @@
 # Door-watcher
 ## Problématique
-Prototyper un robot capable de surveiller des portes et de détecter une ouverture
+Comment gérer plusieurs portes à distance ?
+
+## Solution
+Nous avons prototypé un robot capable de surveiller des portes et d'alerter l'utilisateur en cas d'ouverture
 
 ## Lien de la vidéo
+<https://youtu.be/4PRQ6N-XoSs>
 
 ## Equipe 
 - Arthur Caron
@@ -13,16 +17,18 @@ Prototyper un robot capable de surveiller des portes et de détecter une ouvertu
 Sébastien Altounian
 
 ## Briques mises en place
-- Application mobile pour le choix de la porte 
-- Communication BLE Application / ESP 32 pour envoyer le choix
-- Moteur Dynamixel pour se tourner vers la bonne porte
-- Détection seulement si le moteur est à l’arrêt
-- En cas de détection : l’alarme sonne et la LED rouge s’allume
+- Application mobile (MIT App Inventor) pour envoyer le choix de la porte et recevoir une alerte
+- Bluetooth Low Energy pour la communication application/ESP32
+- Module ESP32 TTGO
+- rosserial pour la communication ESP32/ROS
+- Moteur Dynamixel AX-12 pour se diriger vers la bonne porte (contrôlé par ROS)
+- Capteur ToF pour la détection
+- En cas de détection : l'utilisateur reçoit une alerte, une alarme sonne et une LED rouge s’allume
 - Impression 3D : pièce reliant le moteur et le capteur
 
 ## Comment exécuter le code
-- Vérifiez la communication avec le moteur : rosrun dynamixel_driver info_dump.py -p /dev/ttyACM0 2
-- Executer : roslaunch my_dynamixel_tutorial controller_manager.launch
-- Executer dans un autre terminal : roslaunch my_dynamixel_tutorial controller_spawner.launch
-- Excetuer : roslaunch my_dynamixel_tutorial communication_arduino.launch
+1. Vérifiez la communication avec le moteur : `rosrun dynamixel_driver info_dump.py -p /dev/ttyACM0 2`
+2. Executer : `roslaunch my_dynamixel_tutorial controller_manager.launch`
+3. Executer dans un autre terminal : `roslaunch my_dynamixel_tutorial controller_spawner.launch`
+4. Excetuer : `roslaunch my_dynamixel_tutorial communication_arduino.launch`
 
