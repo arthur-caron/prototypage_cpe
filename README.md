@@ -6,8 +6,7 @@ Comment gérer plusieurs portes à distance ?
 Nous avons prototypé un robot capable de surveiller des portes et d'alerter l'utilisateur en cas d'ouverture
 
 ## Lien de la vidéo
-<https://youtu.be/4PRQ6N-XoSs>
-
+<https://github.com/arthur-caron/prototypage_cpe>
 ## Equipe 
 - Arthur Caron
 - Edouard Petitpierre
